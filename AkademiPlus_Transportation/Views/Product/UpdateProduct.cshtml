@@ -1,0 +1,24 @@
+﻿@model AkademiPlus_Transportation.Models.TblProduct
+@{
+    ViewBag.Title = "UpdateProduct";
+    Layout = "~/Views/Shared/_AdminControllerLayout.cshtml";
+}
+
+<div class="w3-container">
+    <h2 style="color: aliceblue"><span>►</span> Ürün Güncelleme </h2>
+    <form method="post">
+        <label style="color:aliceblue">Ürün Adı</label>
+        @Html.TextBoxFor(x => x.ProductName, new { @class = "form-control" })
+        <br />
+        <label style="color:aliceblue">Ürün Boyutu</label>
+        @Html.TextBoxFor(x => x.ProductSize, new { @class = "form-control" })
+        <br />
+        <label style="color:aliceblue">Ürün Boyu Tipi</label>
+        @Html.TextBoxFor(x => x.ProductSizeType, new { @class = "form-control" })
+        <br />
+        <label style="color:aliceblue">Ürün Açıklaması</label>
+        @Html.TextAreaFor(x => x.ProductDescription, 5, 1, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-primary">Güncelle</button>
+    </form>
+</div>

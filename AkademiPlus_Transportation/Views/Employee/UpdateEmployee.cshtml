@@ -1,0 +1,25 @@
+﻿@model AkademiPlus_Transportation.Models.TblEmployee
+@{
+    ViewBag.Title = "UpdateEmployee";
+    Layout = "~/Views/Shared/_AdminControllerLayout.cshtml";
+}
+
+<div class="w3-container">
+    <h2 style="color: aliceblue"><span>►</span> Personel Güncelleme </h2>
+    <form method="post">
+        @Html.HiddenFor(x => x.EmployeeID)
+        <label style="color:aliceblue">Personel Adı</label>
+        @Html.TextBoxFor(x => x.EmployeeName, new { @class = "form-control" })
+        <br />
+        <label style="color:aliceblue">Personel Soyadı</label>
+        @Html.TextBoxFor(x => x.EmployeSurname, new { @class = "form-control" })
+        <br />
+        <label style="color:aliceblue">Personel Görsel Url</label>
+        @Html.TextBoxFor(x => x.Employeeimage, new { @class = "form-control" })
+        <br />
+        <label style="color:aliceblue">Personel Açıklaması</label>
+        @Html.TextAreaFor(x => x.EmployeeName, 5, 1, new { @class = "form-control" })
+        <br />
+        <button class="btn btn-success">Personel Güncelle</button>
+    </form>
+</div>

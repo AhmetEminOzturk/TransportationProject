@@ -1,0 +1,7 @@
+﻿--Login
+--Register
+--Rolleme
+--Contact-Mesajlaşma
+--Authorize-Authentication
+
+Asp .NetCore 3.1 Code First

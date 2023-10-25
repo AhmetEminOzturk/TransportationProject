@@ -1,0 +1,47 @@
+﻿@model List<AkademiPlus_Transportation.Models.TblCustomer>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminControllerLayout.cshtml";
+    int sayac = 0;
+}
+
+<<div style="margin-bottom:2px; margin-left:15px;" class="w3-quarter">
+    <div class="w3-container w3-red w3-padding-16">
+        <div class="w3-left"><i class="fa fa-product-hunt w3-xxxlarge"></i></div>
+        <div class="w3-right">
+            <h3> @ViewBag.customerCount </h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Toplam Müşteri Sayısı</h4>
+    </div>
+</div>
+
+
+<div class="w3-container">
+    <h2 style="color: aliceblue"><span>►</span> Müşteri Listesi </h2>
+    <table class="table table-bordered">
+        <tr>
+            <th style="background-color: darkkhaki">ID</th>
+            <th style="background-color: darkkhaki">Müşteri Adı</th>
+            <th style="background-color: darkkhaki">Müşteri Soyadı</th>
+            <th style="background-color: darkkhaki">Şehir</th>
+            <th style="background-color: darkkhaki">Sil</th>
+            <th style="background-color: darkkhaki">Güncelle</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            sayac++;
+            <tr>
+                <td style="background-color: darkkhaki">@sayac</td>
+                <td style="background-color: darkkhaki">@item.CustomerName</td>
+                <td style="background-color: darkkhaki">@item.CustomerSurname</td>
+                <td style="background-color: darkkhaki">@item.CustomerCity</td>
+                <td style="background-color: darkkhaki"><a href="/Customer/DeleteCustomer/@item.CustomerID" class="btn btn-danger">Sil</a></td>
+                <td style="background-color: darkkhaki"><a href="/Customer/UpdateCustomer/@item.CustomerID" class="btn btn-success">Güncelle</a></td>
+            </tr>
+        }
+    </table>
+    <a href="/Customer/AddCustomer/" class="btn btn-primary">Yeni Müşteri Kaydı</a>
+    <br />
+    <br />
+</div>

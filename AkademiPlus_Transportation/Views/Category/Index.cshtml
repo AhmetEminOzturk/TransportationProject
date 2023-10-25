@@ -1,0 +1,43 @@
+﻿@model List<AkademiPlus_Transportation.Models.TblCategory>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminControllerLayout.cshtml";
+}
+
+<<div style="margin-bottom:2px; margin-left:15px;" class="w3-quarter">
+    <div class="w3-container w3-red w3-padding-16">
+        <div class="w3-left"><i class="fa fa-product-hunt w3-xxxlarge"></i></div>
+        <div class="w3-right">
+            <h3> @ViewBag.categoryCount </h3>
+        </div>
+        <div class="w3-clear"></div>
+        <h4>Toplam Kategori Sayısı</h4>
+    </div>
+</div>
+
+
+<div class="w3-container">
+    <h2 style="color: aliceblue"><span>►</span> Kategori Listesi </h2>
+    <table class="table table-bordered">
+        <tr>
+            <th style="background-color: darkkhaki">ID</th>
+            <th style="background-color: darkkhaki">Kategori Adı</th>
+            <th style="background-color: darkkhaki">Sil</th>
+            <th style="background-color: darkkhaki">Güncelle</th>
+            <th style="background-color: darkkhaki">Detaylar</th>
+        </tr>
+        @foreach (var item in Model)
+        {
+            
+            <tr>
+                <td style="background-color: darkkhaki">@item.CategoryID</td>
+                <td style="background-color: darkkhaki">@item.CategoryName</td>
+                <td style="background-color: darkkhaki"><a href="/Category/DeleteCategory/@item.CategoryID" class="btn btn-danger">Sil</a></td>
+                <td style="background-color: darkkhaki"><a href="/Category/UpdateCategory/@item.CategoryID" class="btn btn-success">Güncelle</a></td>
+                <td style="background-color: darkkhaki"><a href="#" class="btn btn-warning">Detaylar</a></td>
+
+            </tr>
+        }
+    </table>
+    <a href="/Category/AddCategory/" class="btn btn-primary">Yeni Kategori Kaydı</a>
+</div>
